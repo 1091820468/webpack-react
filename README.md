@@ -95,6 +95,7 @@ webpack 是个打包工具，那么就需要一个输入（入口文件），一
 我们试试在命令行下将 index.js 打包成 build.min.js：
 
     npx webpack index.js -o build.min.js
+    
     The CLI moved into a separate package: webpack-cli
     Would you like to install webpack-cli? (That will run npm install -D webpack-cli) (yes/NO)
     
