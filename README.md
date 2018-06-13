@@ -234,9 +234,9 @@ webpack 重新打包了 dist/main.js，浏览器中打开的页面同时也刷�
 
 我们在 src/index.js 中先写个简单的 React 代码：
 
-  import React from 'react'
-  import ReactDOM from 'react-dom'
-  ReactDOM.render(<div>hello webpack</div>, document.body)
+      import React from 'react'
+      import ReactDOM from 'react-dom'
+      ReactDOM.render(<div>hello webpack</div>, document.body)
 
 查看 webpack-dev-server 的状态：
 
@@ -298,9 +298,9 @@ webpack 配置文件
 
 我们在 src/index.js 中 import 它：
 
-   import ReactDOM from 'react-dom'
-   import Rose from './img/rose.jpg'
-   ReactDOM.render(<div>hello webpack</div>, document.body)
+       import ReactDOM from 'react-dom'
+       import Rose from './img/rose.jpg'
+       ReactDOM.render(<div>hello webpack</div>, document.body)
    
 可以看到命令行报错了：
 
@@ -355,7 +355,7 @@ webpack 配置文件
 加载 CSS 文件
 在 React.js 里，CSS 有很多种写法，比如我们可以直接写在 style 中：
 
-  <img src={Rose} alt='hah' style={{maxWidth: 500}} /> 
+      <img src={Rose} alt='hah' style={{maxWidth: 500}} /> 
   
 因为这就是 JavaScript，我们也就不需要额外处理。
 
@@ -363,10 +363,10 @@ webpack 配置文件
 
 在 src 下新增 index.css：
 
-  .flower {
-    max-width: 500px;
-  }
-  
+      .flower {
+        max-width: 500px;
+      }
+
 然后在 index.js 中引入并应用：
 
      import React from 'react'
@@ -424,9 +424,9 @@ style-loader - 将 CSS 插入到 DOM 中的 style 标签
 
 src/index.css：
 
-  .flower--rotate {
-    transform: rotate(30deg);
-   }
+      .flower--rotate {
+        transform: rotate(30deg);
+       }
    
 src/index.js：
 
@@ -507,17 +507,17 @@ html-webpack-plugin
    
 调整 webpack.config.js：
 
-   const CleanWebpackPlugin = require('clean-webpack-plugin')
-   const HtmlWebpackPlugin = require('html-webpack-plugin')
-   module.exports = {
-     mode: 'development',
-     devServer: {
-       contentBase: path.resolve(__dirname, 'dist')
-     },
-     plugins: [
-        new CleanWebpackPlugin(['dist']),
-        new HtmlWebpackPlugin()
-     ],
+       const CleanWebpackPlugin = require('clean-webpack-plugin')
+       const HtmlWebpackPlugin = require('html-webpack-plugin')
+       module.exports = {
+         mode: 'development',
+         devServer: {
+           contentBase: path.resolve(__dirname, 'dist')
+         },
+         plugins: [
+            new CleanWebpackPlugin(['dist']),
+            new HtmlWebpackPlugin()
+         ],
      
 再运行 npx webpack --mode production，dist 下已经自动生成 index.html，再 title 却是 Webpack App，我们需要再调整一下 webpack.config.js：
 
